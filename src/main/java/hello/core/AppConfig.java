@@ -18,6 +18,8 @@ public class AppConfig {
 	// @Bean memberService -> new MemoryMemberRepository();
 	// @Bean orderService -> new MemoryMemberRepository();
 
+	//@Autowired MemberRepository MemberRepository;
+	
 	@Bean
 	public MemberService memberService() {
 		// 1번
