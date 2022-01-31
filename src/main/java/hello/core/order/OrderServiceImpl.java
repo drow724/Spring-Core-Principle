@@ -23,7 +23,7 @@ public class OrderServiceImpl implements OrderService {
 	// @Autowired private DiscountPolicy discountPolicy;
 
 //	private MemberRepository memberRepository;
-//	private DiscountPolicy discountPolicy;
+//  private DiscountPolicy discountPolicy;
 //	
 //	@Autowired
 //	public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
@@ -31,18 +31,18 @@ public class OrderServiceImpl implements OrderService {
 //		this.discountPolicy = discountPolicy;
 //	}
 
-	/**
-	 * @param discountPolicy the discountPolicy to set
-	 */
+//	/**
+//	 * @param discountPolicy the discountPolicy to set
+//	 */
 //	@Autowired
 //	public void setDiscountPolicy(DiscountPolicy discountPolicy) {
 //		System.out.println("discountPolicy = " + discountPolicy);
 //		this.discountPolicy = discountPolicy;
 //	}
-
-	/**
-	 * @param memberRepository the memberRepository to set
-	 */
+//
+//	/**
+//	 * @param memberRepository the memberRepository to set
+//	 */
 //	@Autowired
 //	public void setMemberRepository(MemberRepository memberRepository) {
 //		System.out.println("memberRepository = " + memberRepository);
