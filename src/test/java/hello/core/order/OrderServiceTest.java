@@ -5,9 +5,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import hello.core.AppConfig;
+import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.Grade;
 import hello.core.member.Member;
+import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
+import hello.core.member.MemoryMemberRepository;
 
 class OrderServiceTest {
 
@@ -32,4 +35,14 @@ class OrderServiceTest {
 		Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
 	}
 
+//	@Test
+//	void fieldInjectionTest() {
+//		OrderServiceImpl orderService = new OrderServiceImpl();
+//		
+//		orderService.setDiscountPolicy(new FixDiscountPolicy());
+//		orderService.setMemberRepository(new MemoryMemberRepository());
+//		
+//		orderService.createOrder(1L, "itemA", 10000);
+//	}
+	
 }
