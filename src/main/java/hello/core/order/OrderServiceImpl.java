@@ -1,14 +1,14 @@
 package hello.core.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
-import lombok.RequiredArgsConstructor;
 
 @Component // ("service")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
 //	private final MemberRepository memberRepository = new
@@ -17,14 +17,14 @@ public class OrderServiceImpl implements OrderService {
 //	private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 //	private DiscountPolicy discountPolicy;
 
-	private final MemberRepository memberRepository;
-	private final DiscountPolicy discountPolicy;
+//	private final MemberRepository memberRepository;
+//	private final DiscountPolicy discountPolicy;
 
 //	@Autowired private MemberRepository memberRepository;
 //	@Autowired private DiscountPolicy discountPolicy;
 
-//	private MemberRepository memberRepository;
-//  private DiscountPolicy discountPolicy;
+	private MemberRepository memberRepository;
+  private DiscountPolicy discountPolicy;
 //	
 //	@Autowired
 //	public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
@@ -51,12 +51,12 @@ public class OrderServiceImpl implements OrderService {
 //	}
 //
 // 	생성자가 1개면 의존성 자동 주입
-//	@Autowired
-//	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-//		System.out.println("1. OrderServiceImpl.OrderServiceImpl");
-//		this.memberRepository = memberRepository;
-//		this.discountPolicy = discountPolicy;
-//	}
+	@Autowired
+	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+		System.out.println("1. OrderServiceImpl.OrderServiceImpl");
+		this.memberRepository = memberRepository;
+		this.discountPolicy = discountPolicy;
+	}
 
 	@Override
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {
