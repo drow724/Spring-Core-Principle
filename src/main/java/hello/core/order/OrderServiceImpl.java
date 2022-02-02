@@ -1,6 +1,7 @@
 package hello.core.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import hello.core.discount.DiscountPolicy;
@@ -24,7 +25,9 @@ public class OrderServiceImpl implements OrderService {
 //	@Autowired private DiscountPolicy discountPolicy;
 
 	private MemberRepository memberRepository;
-  private DiscountPolicy discountPolicy;
+	private DiscountPolicy discountPolicy;
+//	private DiscountPolicy rateDiscountPolicy;
+	
 //	
 //	@Autowired
 //	public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
@@ -52,9 +55,13 @@ public class OrderServiceImpl implements OrderService {
 //
 // 	생성자가 1개면 의존성 자동 주입
 	@Autowired
-	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+	public OrderServiceImpl(MemberRepository memberRepository, 
+			//DiscountPolicy rateDiscountPolicy
+			//@Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy
+			DiscountPolicy discountPolicy) {
 		System.out.println("1. OrderServiceImpl.OrderServiceImpl");
 		this.memberRepository = memberRepository;
+		//this.discountPolicy = rateDiscountPolicy;
 		this.discountPolicy = discountPolicy;
 	}
 
